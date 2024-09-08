@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   django_gunicorn:
+    image: deveaselabs/django-gunicorn:latest
     volumes:
       - static:/static
     env_file:
@@ -10,8 +11,11 @@ services:
       context: .
     ports:
       - "8000:8000"
+    networks:
+      - app-network
 
   nginx:
+    image: deveaselabs/nginx:latest
     build: ./nginx
     volumes:
       - static:/static
@@ -22,3 +26,6 @@ services:
 
 volumes:
   static:
+
+networks:
+  app-network:
