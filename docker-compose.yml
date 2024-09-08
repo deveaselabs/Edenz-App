@@ -14,7 +14,6 @@ services:
     networks:
       - app-network
 
-
   nginx:
     image: deveaselabs/nginx:latest
     build: ./nginx
