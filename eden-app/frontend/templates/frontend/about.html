@@ -1,0 +1,325 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edenz Consultants</title>
+    <link rel="shortcut icon" href="{% static 'frontend/img/logo.webp'%}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'frontend/css/style.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <style>
+        @media (max-width: 767px) {
+            #about-carousel {
+                height: 500px !important;
+            }
+        }
+    </style>
+</head>
+</head>
+
+<body style="overflow-x:hidden; overflow-y:auto ;">
+    <div class="container-fluid" id="main" style="padding: 0px !important;"">
+        <div class=" row pt-5">
+        <nav class="navbar navbar-expand-lg">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'frontend/img/logo.webp' %}" alt="Logo" style="width: 50px; height: 50px;"
+                    class="ms-4">
+                <h4 class="ms-2" style="color: gray;">Edenz Consultants</h4>
+            </div>
+
+            <button class="navbar-toggler ms-auto me-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 70px;margin-right: 70px;">
+                <ul id="nav-links" class="navbar-nav d-flex justify-content-between w-100 me-lg-5 ms-lg-5">
+                    <li><a class="nav-link-custom" href="{% url 'main'%}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link-custom nav-link" href="{% url 'about' %}">About
+                            Edenz</a></li>
+                    <li class="nav-item"><a class="nav-link-custom nav-link" href="{% url 'contact' %}">Contact
+                            Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center ms-lg-5 mt-2 mt-lg-0">
+                    <a href="{% url 'student_login'%}" class="btn btn-outline-success" style="width: 150px;">Student
+                        Portal</a>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="container-fluid mt-5" id="about">
+        <div class="container-fluid mt-5" id="about">
+            <div class="row p-3">
+                <!-- Image Column -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 pt-3" id="about-carousel">
+                    <div id="image-carousel" class="carousel-container border border-success border-2 rounded-4">
+                        <img src="{% static 'frontend/img/about1.jpg' %}" alt="" class="img-fluid carousel-img active">
+                        <img src="{% static 'frontend/img/about2.jpg' %}" alt="" class="img-fluid carousel-img">
+                        <img src="{% static 'frontend/img/about3.jpg' %}" alt="" class="img-fluid carousel-img">
+                    </div>
+                </div>
+
+                <!-- Text Content Column -->
+                <div class="col-lg-8 col-md-12" id="edenz-para">
+                    <h1 class="fw-bold">About Us</h1>
+                    <p class="text-gray mt-4">Edenz Consultants is a leading study abroad firm based in Pakistan,
+                        dedicated to helping students achieve their educational dreams internationally. With a
+                        strong
+                        commitment to providing personalized guidance, we assist students in navigating the complex
+                        process of applying to top universities across the globe. Ranked as the 5th best consultancy
+                        firm in Pakistan, we take pride in our professional expertise and proven success in
+                        transforming
+                        students' ambitions into reality.</p>
+                    <p class="text-gray mt-4">Join us at Edenz Consultants and embark on a transformative
+                        educational journey with one of the top-ranked consultancy firms in Pakistan.
+                    </p>
+                    <ul class="mt-5 p-0">
+                        <!-- First List Item -->
+                        <li class="list-style-none mb-4 about-li d-flex flex-column flex-md-row align-items-start">
+                            <img src="{% static 'frontend/img/tutor.png'%}" alt=""
+                                class="icon d-icon d-none d-md-block">
+                            <span class="fw-semibold ms-md-4 mt-3 mt-md-0 fs-6 fs-md-5">We find the expert tutor
+                                with huge teaching
+                                experience</span>
+                        </li>
+
+                        <!-- Second List Item -->
+                        <li class="list-style-none mb-4 about-li d-flex flex-column flex-md-row align-items-start">
+                            <img src="{% static 'frontend/img/course.png'%}" alt=""
+                                class="icon d-icon d-none d-md-block">
+                            <span class="fw-semibold ms-md-4 mt-3 mt-md-0 fs-6 fs-md-5">We present world-class
+                                courses with practical learning
+                                <br> tasks that make students more confident.</span>
+                        </li>
+
+                        <!-- Third List Item -->
+                        <li class="list-style-none mb-4 about-li d-flex flex-column flex-md-row align-items-start">
+                            <img src="{% static 'frontend/img/portal.png'%}" alt=""
+                                class="icon d-icon d-none d-md-block">
+                            <span class="fw-semibold ms-md-4 mt-3 mt-md-0 fs-6 fs-md-5">We use advanced AI-based
+                                portals for test preparations
+                                like IELTS, PTE</span>
+                        </li>
+                    </ul>
+
+                    <a class="btn btn-outline-success" href="{% url 'contact'%}">Contact Us Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <p class="text-center" style="color: rgb(7, 132, 90);">Start your meeting right now</p>
+            <h1 class="text-center">Meet Experts</h1>
+            <div class="row mt-5">
+                <div class="slick-experts">
+                    <div>
+                        <div class="card-expert">
+                            <div class="card-body-expert">
+                                <img src="{% static 'frontend/img/rashid.jpg'%}" alt="" class="expert-img">
+                                <h4 class="text-center">Mr Rashid Mahfuz</h4>
+                                <h6 class="text-center">Business Development Manager</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-expert">
+                            <div class="card-body-expert">
+                                <img src="{% static 'frontend/img/ceo.jpg'%}" alt="" class="expert-img">
+                                <h4 class="text-center">Dr Taimoor Ali Ahmad</h4>
+                                <h6 class="text-center">CEO</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-expert">
+                            <div class="card-body-expert">
+                                <img src="{% static 'frontend/img/dr-ferheen.jpg'%}" alt="" class="expert-img">
+                                <h4 class="text-center">Dr Ferheen</h4>
+                                <h6 class="text-center">Head Foreign Affairs</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-expert">
+                            <div class="card-body-expert">
+                                <img src="{% static 'frontend/img/husnain.jpg'%}" alt="" class="expert-img">
+                                <h4 class="text-center">Sheikh Husnain Ibn Asad</h4>
+                                <h6 class="text-center">Student Counsellor officer</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-expert">
+                            <div class="card-body-expert">
+                                <img src="{% static 'frontend/img/kasur-head.png'%}" alt="" class="expert-img">
+                                <h4 class="text-center">Hafiz Muhammad Mukhtar</h4>
+                                <h6 class="text-center">Director of Edenz Kasure Baranch</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-expert">
+                            <div class="card-body-expert">
+                                <img src="{% static 'frontend/img/dr-zafar.png'%}" alt="" class="expert-img">
+                                <h4 class="text-center">Dr Zafar Ahsan</h4>
+                                <h6 class="text-center">Defence Branch Manager</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 pb-4" id="whychoseus">
+            <div class="row">
+                <h2 class="text-center mb-4">Why Choose Us</h2>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div id="image-carousel" class="carousel-container border border-success border-2 rounded-4">
+                        <img src="{% static 'frontend/img/whychooseus.jpg' %}" alt=""
+                            class="img-fluid carousel-img-wcu active object-fit-cover">
+                        <img src="{% static 'frontend/img/whychooseus2.jpg' %}" alt=""
+                            class="img-fluid carousel-img-wcu object-fit-cover">
+                        <img src="{% static 'frontend/img/whychooseus3.jpg' %}" alt=""
+                            class="img-fluid carousel-img-wcu object-fit-cover">
+                        <img src="{% static 'frontend/img/whychooseus4.jpg' %}" alt=""
+                            class="img-fluid carousel-img-wcu object-fit-cover">
+                        <img src="{% static 'frontend/img/whychooseus5.jpg' %}" alt=""
+                            class="img-fluid carousel-img-wcu object-fit-cover">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <p class="fs-6">
+                        At Edenz Consultants, we stand out for our unparalleled dedication to helping students achieve
+                        their dreams of studying abroad.
+                        Our team of experienced professionals offers personalized guidance tailored to each student's
+                        unique needs, ensuring a smooth and successful application process.
+                    </p>
+                    <p class="fs-6">
+                        Ranked among the top consultancy firms in Pakistan, we take pride in our extensive network of
+                        global universities, ensuring students have access to the best educational opportunities
+                        available.
+                        Our commitment to excellence, combined with our cutting-edge AI-based tools, makes us the ideal
+                        partner in your educational journey.
+                    </p>
+                    <p class="fs-6">
+                        Choose Edenz Consultants for expert advice, world-class courses, and a proven track record of
+                        success in making students' educational dreams a reality.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="text-center d-flex flex-column flex-md-row justify-content-between align-items-center" id="footer"
+        style="background-color: rgb(7, 132, 90); color: white; padding: 10px;">
+        <!-- Copyright Section -->
+        <div class="mb-2 mb-md-0">
+            <strong>&#169; Edenz Consultants 2024</strong>
+        </div>
+        <!-- Social Icons Section -->
+        <div class="d-flex gap-2">
+            <a href="https://www.facebook.com/edenzconsultancy/" target="_blank" class="d-inline-block">
+                <img src="{% static 'frontend/img/fb.png' %}" alt="Facebook" class="social-icon img-fluid"
+                    style="max-width: 25px;">
+            </a>
+            <a href="https://www.instagram.com/edenzconsultant/reels/" target="_blank" class="d-inline-block">
+                <img src="{% static 'frontend/img/insta.png' %}" alt="Instagram" class="social-icon img-fluid"
+                    style="max-width: 25px;">
+            </a>
+            <a href="https://www.youtube.com/@EdenzConsultant" target="_blank" class="d-inline-block">
+                <img src="{% static 'frontend/img/yt.png' %}" alt="YouTube" class="social-icon img-fluid"
+                    style="max-width: 25px;">
+            </a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script src="https://kit.fontawesome.com/5fe7c10d12.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slick-experts').slick({
+                slidesToShow: 3,  // Default number of cards to show
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+                speed: 300,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                responsive: [
+                    {
+                        breakpoint: 1024,  // For screens below 1024px
+                        settings: {
+                            slidesToShow: 2,  // Show 2 cards at a time
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 768,  // For screens below 768px
+                        settings: {
+                            slidesToShow: 1,  // Show 1 card at a time
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 480,  // For screens below 480px
+                        settings: {
+                            slidesToShow: 1,  // Show 1 card at a time
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel-img');
+            const totalImages = images.length;
+            const intervalTime = 3000; // 3 seconds for each image
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active'); // Hide the current image
+                currentIndex = (currentIndex + 1) % totalImages; // Move to the next image
+                images[currentIndex].classList.add('active'); // Show the next image
+            }
+
+            // Start the carousel
+            setInterval(showNextImage, intervalTime);
+
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.carousel-img-wcu');
+            const totalImages = images.length;
+            const intervalTime = 3000; // 3 seconds for each image
+
+            function showNextImage() {
+                images[currentIndex].classList.remove('active'); // Hide the current image
+                currentIndex = (currentIndex + 1) % totalImages; // Move to the next image
+                images[currentIndex].classList.add('active'); // Show the next image
+            }
+
+            // Start the carousel
+            setInterval(showNextImage, intervalTime);
+
+        });
+    </script>
+</body>
+
+</html>

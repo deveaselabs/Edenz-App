@@ -1,0 +1,32 @@
+name: Eden App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        run: docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
+
+      - name: Build Docker Images
+        run: docker-compose -f docker-compose.yml build
+
+      - name: Push Docker Images
+        run: docker-compose -f docker-compose.yml push
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull Images
+        run: docker-compose -f docker-compose.yml pull
+
+      - name: Run Images
+        run: docker-compose up -d

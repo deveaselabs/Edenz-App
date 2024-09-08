@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Butterfly+Kids&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+html {
+  scrollbar-width: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#main {
+  height: auto;
+  background-image: linear-gradient(to right, #ebfcee, #e9e9e9);
+}
+
+#nav-links li {
+  list-style: none;
+}
+.nav-link-custom {
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: gray;
+}
+.nav-link-custom:hover {
+  color: rgb(7, 132, 90);
+}
+.card {
+  background-color: #f6fcf7 !important;
+  box-shadow: 0 4px 6px gray;
+}
+.icon {
+  width: 50px !important;
+  height: 50px !important;
+}
+.story {
+  height: 350px;
+  overflow: hidden;
+  padding: 5px;
+  scrollbar-width: none;
+}
+.Header {
+  display: none;
+}
+
+/* study destinations */
+#destinations {
+  background-color: #f3f3f3;
+  height: auto;
+}
+.flag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.flag:hover {
+  background-color: white;
+}
+.flag-icon {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  width: 100px;
+  height: 100px;
+}
+.social-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+#footer {
+  position: relative;
+  bottom: 0px;
+}
+/* contact form */
+#form-box {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px gray;
+}
+#address-card {
+  background-color: #ebfcee;
+  /* box-shadow: 2px 2px 5px gray; */
+  height: 100%;
+  border-radius: 20px;
+}
+.list-style-none {
+  list-style: none;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.address-card-item {
+  margin-bottom: 40px;
+}
+.social {
+  color: rgb(7, 132, 90);
+  background-color: white;
+  padding: 10px;
+  border-radius: 50px;
+}
+.social:hover {
+  color: white;
+  background-color: rgb(7, 132, 90);
+}
+#branches {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px gray;
+}
+.text-gray {
+  color: gray;
+}
+#office-img {
+  /* margin: 10px; */
+  border-radius: 30px;
+  border: 4px solid rgb(7, 132, 90);
+  margin-top: 10px;
+  height: auto;
+}
+.about-li {
+  border-radius: 10px;
+  padding: 10px;
+  color: rgb(7, 132, 90);
+  perspective: 1000px;
+}
+.d-icon {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.d-icon:hover {
+  transform: rotateY(180deg);
+}
+/* Slick styles */
+.card-expert {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 30px;
+}
+.expert-img {
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border: 2px solid rgb(7, 132, 90);
+  border-radius: 40px;
+}
+#whychoseus {
+  margin-top: 50px;
+}
+
+#whychoseus h2 {
+  font-size: 2.5rem;
+  color: #075854; /* Custom color */
+  margin-bottom: 20px;
+}
+
+#whychoseus img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#whychoseus p {
+  color: #444;
+  line-height: 1.7;
+}
+.carousel-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.carousel-img-wcu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+.carousel-img-wcu.active {
+  opacity: 1;
+}
+.object-fit-cover {
+  object-fit: cover;
+}

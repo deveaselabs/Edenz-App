@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'portal/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'portal/img/logo.webp' %}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <img src="{% static 'portal/img/logo.webp' %}" alt="Edenz Consultants" class="img-fluid mb-2" style="max-width: 150px;">
+            <h1>Edenz Consultants</h1>
+        </div>
+        <h2 class="mb-4">Employee Login</h2>
+        <form action="emp_login" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cnic">CNIC</label>
+                <input type="text" class="form-control" id="cnic" name="cnic" required placeholder="CNIC">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+            </div>
+
+            {% if messages %}
+            <div class="alert alert-info">
+                <ul class="mb-0">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="emp_reg" class="btn btn-primary">Register</a>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

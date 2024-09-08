@@ -1,0 +1,65 @@
+@media screen and (max-width: 1400px) {
+  #stories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  #form-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #address-card,
+  #contact-form {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  #address-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  #address-card .list-unstyled {
+    flex-grow: 1;
+  }
+
+  .icon {
+    max-width: 40px; /* Adjust as needed */
+    height: auto;
+  }
+
+  #contact-form .form-floating {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  #whychoseus .row {
+    flex-direction: column;
+  }
+
+  #whychoseus .col-lg-4,
+  #whychoseus .col-lg-8 {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  #whychoseus h2 {
+    font-size: 2rem;
+  }
+
+  #whychoseus p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 767px) {
+  #about-carousel {
+    height: 500px !important;
+  }
+}
