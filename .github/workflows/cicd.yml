@@ -31,7 +31,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Pull Images
-        run: docker-compose -f docker-compose.yml pull
+        run: docker-compose -f ./docker-compose.yml pull
 
       - name: Run Images
         run: docker-compose up -d
