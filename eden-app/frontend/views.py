@@ -1,12 +1,14 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+
 
 
 # Create your views here.
 
 def main(request):
     return render(request, 'frontend/index.html')
-
+@csrf_exempt
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -22,6 +24,7 @@ def contact(request):
     return render(request,'frontend/contact.html')
 def about(request):
     return render(request,'frontend/about.html')
+@csrf_exempt
 def apply(request):
     if request.method == 'POST':
         name = request.POST.get('name')
