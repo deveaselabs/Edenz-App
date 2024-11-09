@@ -22,7 +22,7 @@ services:
       - static:/static
       - media:/media
     ports: 
-      - "80:80"
+      - "4000:80"
     depends_on:
       - django_gunicorn
 
