@@ -28,8 +28,15 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost', 'http://127.0.0.1', 'http://92.113.25.36', 'http://www.edenzconsultant.org','https://edenzconsultant.org','edenzconsultant.org']
-
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://92.113.25.36',
+    'http://www.edenzconsultant.org',
+    'https://www.edenzconsultant.org',
+    'http://edenzconsultant.org',
+    'https://edenzconsultant.org'
+]
 
 
 # Application definition
