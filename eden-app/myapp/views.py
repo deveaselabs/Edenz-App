@@ -5,10 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Country, University, Program
 
-
-
-# Create your views here.
-
+# Authentication Views
 def auth(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -37,6 +34,23 @@ def dashboard(request):
         'countries': countries
     }
     return render(request,'dashboard.html',context)
+
+# Country Management Views
+def add_country(request):
+    if request.method == 'POST':
+        country_name = request.POST.get('name')
+        
+        # Check if the country already exists
+        if Country.objects.filter(name=country_name).exists():
+            messages.error(request, 'Country already exists.')
+        else:
+            # Save the new country
+            Country.objects.create(name=country_name)
+            messages.success(request, f'Country "{country_name}" added successfully.')
+        
+        return redirect('add_country')  # Reload the form after submission
+    
+    return render(request, 'add_country.html')
 
 def universities_by_country(request, country_id):
     # Fetch the country based on the ID
@@ -75,23 +89,7 @@ def universities_by_country(request, country_id):
 
     return render(request, 'universities_by_country.html', context)
 
-
-def add_country(request):
-    if request.method == 'POST':
-        country_name = request.POST.get('name')
-        
-        # Check if the country already exists
-        if Country.objects.filter(name=country_name).exists():
-            messages.error(request, 'Country already exists.')
-        else:
-            # Save the new country
-            Country.objects.create(name=country_name)
-            messages.success(request, f'Country "{country_name}" added successfully.')
-        
-        return redirect('add_country')  # Reload the form after submission
-    
-    return render(request, 'add_country.html')
-
+# University Management Views
 def add_university(request):
     countries = Country.objects.all()
 
@@ -125,8 +123,7 @@ def add_university(request):
     
     return render(request, 'add_university.html', {'countries': countries})
 
-
-#Addition of Programs
+# Program Management Views
 def select_country(request):
     if request.method == 'POST':
         selected_country = request.POST['country']
